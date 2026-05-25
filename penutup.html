@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Penutup</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+/* FOTO TERIMA KASIH */
+
+.thanks-photo{
+  display:flex;
+  justify-content:center;
+
+  margin-bottom:40px;
+}
+
+.thanks-img{
+  width:220px;
+  height:220px;
+
+  padding:6px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+  135deg,
+  #ffd369,
+  #f59e0b
+  );
+
+  box-shadow:
+  0 0 40px rgba(255,211,105,0.4);
+}
+
+.thanks-img{
+  width:200px;
+  height:280px;   /* lebih lebar daripada tinggi */
+
+  padding:8px;
+
+  border-radius:20px; /* tidak bulat penuh */
+
+  background: linear-gradient(135deg, #ffd369, #f59e0b);
+
+  box-shadow: 0 0 60px rgba(255,211,105,0.5);
+}
+
+.thanks-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  border-radius:14px;
+  border:5px solid #07142b;
+}
+  
+  /* BUBBLE */
+
+.bubble{
+  position:fixed;
+
+  bottom:-100px;
+
+  background:rgba(255,255,255,0.05);
+
+  border-radius:50%;
+
+  animation:bubbleUp 15s linear infinite;
+}
+
+.x1{
+  left:10%;
+  width:40px;
+  height:40px;
+}
+
+.x2{
+  left:40%;
+  width:60px;
+  height:60px;
+
+  animation-duration:18s;
+}
+
+.x3{
+  left:70%;
+  width:30px;
+  height:30px;
+
+  animation-duration:12s;
+}
+
+.x4{
+  left:85%;
+  width:80px;
+  height:80px;
+
+  animation-duration:20s;
+}
+
+@keyframes bubbleUp{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  100%{
+    transform:translateY(-120vh);
+  }
+
+}
+  
+  /* BIG CTA */
+
+.big-cta{
+  margin-top:100px;
+  margin-bottom:100px;
+
+  padding:70px 40px;
+
+  border-radius:40px;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(255,211,105,0.15),
+  rgba(56,189,248,0.08)
+  );
+
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.big-cta h1{
+  font-size:58px;
+
+  margin-bottom:25px;
+
+  color:#ffd369;
+}
+
+.big-cta p{
+  color:#ddd;
+
+  margin-bottom:35px;
+
+  line-height:1.9;
+}
+
+.big-cta a{
+  display:inline-block;
+
+  padding:18px 38px;
+
+  border-radius:18px;
+
+  background:#ffd369;
+
+  color:#222;
+
+  text-decoration:none;
+
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+.big-cta a:hover{
+  transform:translateY(-6px);
+}
+  
+  /* GALLERY */
+
+.gallery{
+  margin-bottom:100px;
+}
+
+.gallery h2{
+  text-align:center;
+
+  font-size:42px;
+
+  color:#ffd369;
+
+  margin-bottom:50px;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+  gap:25px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:280px;
+
+  object-fit:cover;
+
+  border-radius:28px;
+
+  transition:0.4s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+  
+/* TIMELINE */
+
+.timeline-section{
+  margin-bottom:100px;
+}
+
+.timeline-section h2{
+  text-align:center;
+
+  font-size:42px;
+
+  margin-bottom:60px;
+
+  color:#ffd369;
+}
+
+.timeline{
+  position:relative;
+
+  max-width:800px;
+
+  margin:auto;
+}
+
+/* GARIS DI SAMPING */
+
+.timeline::before{
+  content:'';
+
+  position:absolute;
+
+  left:22px;
+  top:0;
+
+  width:4px;
+  height:100%;
+
+  background:#ffd369;
+
+  border-radius:20px;
+}
+
+.timeline-item{
+  position:relative;
+
+  margin-bottom:35px;
+
+  padding-left:70px;
+}
+
+.circle{
+  position:absolute;
+
+  left:10px;
+  top:22px;
+
+  width:28px;
+  height:28px;
+
+  border-radius:50%;
+
+  background:#ffd369;
+
+  border:5px solid #07142b;
+
+  z-index:2;
+}
+
+.timeline-content{
+  padding:28px 35px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.07);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  color:white;
+
+  transition:0.3s;
+}
+
+.timeline-content:hover{
+  transform:translateX(10px);
+
+  background:rgba(255,255,255,0.1);
+}
+  
+  /* CERTIFICATE */
+
+.certificate{
+  margin-bottom:100px;
+
+  text-align:center;
+}
+
+.certificate h2{
+  font-size:42px;
+
+  color:#ffd369;
+
+  margin-bottom:20px;
+}
+
+.certificate p{
+  color:#cbd5e1;
+
+  margin-bottom:40px;
+}
+
+.certificate-box{
+  max-width:800px;
+
+  margin:auto;
+
+  padding:60px;
+
+  border-radius:35px;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(255,211,105,0.15),
+  rgba(255,255,255,0.05)
+  );
+
+  border:2px solid rgba(255,211,105,0.3);
+}
+
+.certificate-box h1{
+  font-size:58px;
+
+  margin-bottom:20px;
+
+  color:#ffd369;
+}
+
+.certificate-box h3{
+  font-size:30px;
+
+  margin-bottom:20px;
+}
+
+.certificate-box span{
+  color:#ddd;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* GLOW */
+
+    .glow1,
+    .glow2{
+      position:fixed;
+
+      width:350px;
+      height:350px;
+
+      filter:blur(180px);
+
+      opacity:0.12;
+
+      z-index:0;
+    }
+
+    .glow1{
+      background:#ffd369;
+
+      top:-100px;
+      left:-100px;
+    }
+
+    .glow2{
+      background:#38bdf8;
+
+      bottom:-100px;
+      right:-100px;
+    }
+
+    /* FLOAT */
+
+    .float-icon{
+      position:fixed;
+
+      color:rgba(255,255,255,0.05);
+
+      font-size:70px;
+
+      animation:floatAnim 6s ease-in-out infinite;
+
+      pointer-events:none;
+    }
+
+    .icon1{
+      top:20%;
+      left:4%;
+    }
+
+    .icon2{
+      bottom:15%;
+      right:6%;
+    }
+
+    .icon3{
+      top:60%;
+      left:12%;
+    }
+
+    @keyframes floatAnim{
+
+      0%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-20px);
+      }
+
+      100%{
+        transform:translateY(0);
+      }
+
+    }
+
+    /* SECTION */
+
+    .section{
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      min-height:100vh;
+
+      padding:120px 8%;
+    }
+
+    /* TITLE */
+
+    .mini-title{
+      text-align:center;
+
+      color:#ffd369;
+
+      letter-spacing:4px;
+
+      font-size:14px;
+      font-weight:600;
+
+      margin-bottom:15px;
+    }
+
+    .title{
+      text-align:center;
+
+      font-size:62px;
+
+      line-height:1.2;
+
+      margin-bottom:20px;
+    }
+
+    .desc{
+      text-align:center;
+
+      max-width:760px;
+
+      margin:auto;
+
+      color:#cbd5e1;
+
+      line-height:1.9;
+
+      margin-bottom:60px;
+    }
+
+    /* NAV */
+
+    .page-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+
+      gap:18px;
+
+      margin-bottom:80px;
+    }
+
+    .page-btn{
+      padding:14px 24px;
+
+      border-radius:16px;
+
+      text-decoration:none;
+
+      color:white;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      transition:0.3s;
+    }
+
+    .page-btn:hover{
+      background:#ffd369;
+      color:#222;
+
+      transform:translateY(-5px);
+    }
+
+    .active-btn{
+      background:#ffd369;
+      color:#222;
+
+      font-weight:600;
+    }
+
+    /* MAIN CARD */
+
+    .closing-card{
+      max-width:1100px;
+
+      margin:auto;
+      margin-bottom:100px;
+
+      padding:60px;
+
+      border-radius:40px;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      backdrop-filter:blur(15px);
+
+      text-align:center;
+    }
+
+    .closing-card h2{
+      font-size:48px;
+
+      margin-bottom:25px;
+
+      color:#ffd369;
+    }
+
+    .closing-card p{
+      color:#cbd5e1;
+
+      line-height:2;
+
+      font-size:17px;
+
+      margin-bottom:35px;
+    }
+
+    .closing-btn{
+      display:inline-block;
+
+      padding:18px 36px;
+
+      border-radius:18px;
+
+      background:#ffd369;
+
+      color:#222;
+
+      text-decoration:none;
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .closing-btn:hover{
+      transform:translateY(-6px);
+    }
+
+    /* MESSAGE */
+
+    .message-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+      gap:30px;
+
+      margin-bottom:100px;
+    }
+
+    .message-card{
+      padding:35px;
+
+      border-radius:30px;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      transition:0.4s;
+    }
+
+    .message-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .message-card span{
+      font-size:50px;
+
+      display:block;
+
+      margin-bottom:20px;
+    }
+
+    .message-card h3{
+      color:#ffd369;
+
+      margin-bottom:18px;
+
+      font-size:28px;
+    }
+
+    .message-card p{
+      color:#cbd5e1;
+
+      line-height:1.9;
+    }
+
+    /* THANKS */
+
+    .thanks-box{
+      text-align:center;
+
+      margin-bottom:100px;
+    }
+
+    .thanks-box h2{
+      font-size:50px;
+
+      margin-bottom:25px;
+
+      color:#ffd369;
+    }
+
+    .thanks-box p{
+      max-width:800px;
+
+      margin:auto;
+
+      color:#cbd5e1;
+
+      line-height:2;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      text-align:center;
+
+      margin-bottom:100px;
+    }
+
+    .quote p{
+      font-size:28px;
+
+      line-height:1.8;
+
+      font-style:italic;
+
+      margin-bottom:15px;
+    }
+
+    .quote span{
+      color:#ffd369;
+    }
+
+    /* FOOTER */
+
+    .footer{
+      margin-top:80px;
+
+      padding-top:50px;
+
+      border-top:1px solid rgba(255,255,255,0.1);
+
+      text-align:center;
+    }
+
+    .footer h2{
+      color:#ffd369;
+
+      margin-bottom:15px;
+    }
+
+    .footer p{
+      color:#cbd5e1;
+
+      margin-bottom:30px;
+    }
+
+    .footer-social{
+      display:flex;
+      justify-content:center;
+
+      gap:20px;
+    }
+
+    .footer-social a{
+      width:55px;
+      height:55px;
+
+      border-radius:50%;
+
+      background:rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-decoration:none;
+
+      color:white;
+
+      font-size:24px;
+
+      transition:0.3s;
+    }
+
+    .footer-social a:hover{
+      background:#ffd369;
+
+      color:#222;
+
+      transform:translateY(-6px);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .title{
+        font-size:42px;
+      }
+
+      .closing-card{
+        padding:40px 25px;
+      }
+
+      .closing-card h2{
+        font-size:34px;
+      }
+
+      .thanks-box h2{
+        font-size:36px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- GLOW -->
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- FLOAT -->
+
+  <div class="float-icon icon1">☪</div>
+  <div class="float-icon icon2">☾</div>
+  <div class="float-icon icon3">✦</div>
+
+  <!-- SECTION -->
+
+  <section class="section">
+
+    <p class="mini-title">
+      PENUTUP
+    </p>
+
+    <h1 class="title">
+      Terima Kasih <br> Sudah Belajar
+    </h1>
+
+    <p class="desc">
+      Semoga website pembelajaran wudhu ini dapat membantu
+      memahami tata cara bersuci dengan benar sesuai ajaran Islam.
+    </p>
+
+    <!-- NAV -->
+
+    <div class="page-buttons">
+
+      <a href="beranda.html" class="page-btn">
+        🏠 Home
+      </a>
+
+      <a href="anggota.html" class="page-btn">
+        👥 Anggota
+      </a>
+
+      <a href="definisi.html" class="page-btn">
+        📖 Pengertian
+      </a>
+
+      <a href="tatawudhu.html" class="page-btn">
+        ✨ Tata Cara
+      </a>
+
+      <a href="pembatalan.html" class="page-btn">
+        ⚠ Pembatal
+      </a>
+
+      <a href="video.html" class="page-btn">
+        🎥 Video
+      </a>
+
+      <a href="penutup.html" class="page-btn active-btn">
+        🏆 Penutup
+      </a>
+
+    </div>
+
+    <!-- MAIN CARD -->
+
+    <div class="closing-card">
+
+      <h2>
+        🌙 Website Pembelajaran Wudhu
+      </h2>
+
+      <p>
+        Website ini dibuat untuk membantu mempelajari wudhu
+        mulai dari pengertian, tata cara, pembatal wudhu,
+        hingga video pembelajaran interaktif.
+      </p>
+
+      <a href="beranda.html" class="closing-btn">
+        ✨ Kembali Ke Beranda
+      </a>
+
+    </div>
+    
+    <div class="certificate">
+
+  <h2>
+    🏆 Sertifikat Pembelajaran
+  </h2>
+
+  <p>
+    Selamat telah menyelesaikan pembelajaran wudhu.
+  </p>
+
+  <div class="certificate-box">
+
+    <h1>
+      CERTIFICATE
+    </h1>
+
+    <h3>
+      Panduan Wudhu Modern
+    </h3>
+
+    <span>
+      ✨ Completed Successfully ✨
+    </span>
+
+  </div>
+
+</div>
+
+    <!-- MESSAGE -->
+
+    <div class="message-grid">
+        
+
+      <div class="message-card">
+
+        <span>🕌</span>
+
+        <h3>
+          Belajar Ibadah
+        </h3>
+
+        <p>
+          Memahami tata cara bersuci dengan baik sebelum beribadah.
+        </p>
+
+      </div>
+
+      <div class="message-card">
+
+        <span>✨</span>
+
+        <h3>
+          Menjaga Kesucian
+        </h3>
+
+        <p>
+          Wudhu mengajarkan pentingnya kebersihan lahir dan batin.
+        </p>
+
+      </div>
+
+      <div class="message-card">
+
+        <span>📿</span>
+
+        <h3>
+          Mendekat Kepada Allah
+        </h3>
+
+        <p>
+          Menjadikan ibadah lebih khusyuk dan penuh ketenangan.
+        </p>
+
+      </div>
+
+    </div>
+    
+<div class="timeline-section">
+
+  <h2>
+    🚀 Perjalanan Pembelajaran
+  </h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+
+      <div class="timeline-content">
+        ✅ Memahami Pengertian Wudhu
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+
+      <div class="timeline-content">
+        💧 Belajar Tata Cara Wudhu
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+
+      <div class="timeline-content">
+        ⚠ Mengetahui Pembatal Wudhu
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="circle"></div>
+
+      <div class="timeline-content">
+        🎥 Menonton Video Pembelajaran
+      </div>
+    </div>
+
+  </div>
+
+</div>
+    
+<div class="thanks-box">
+    
+    <div class="thanks-photo">
+
+  <div class="thanks-img">
+
+    <img src="Salam.png">
+
+  </div>
+
+</div>
+
+    <!-- THANKS -->
+
+    <div class="thanks-box">
+
+      <h2>
+        💙 Terima Kasih
+      </h2>
+
+      <p>
+        Terima kasih telah mengunjungi website pembelajaran wudhu ini.
+        Semoga ilmu yang dipelajari dapat bermanfaat dan diterapkan
+        dalam kehidupan sehari-hari.
+      </p>
+
+    </div>
+    
+<div class="gallery">
+
+  <h2>
+    🕌 Gallery Islami
+  </h2>
+
+  <div class="gallery-grid">
+
+    <img src="Go.png">
+
+    <img src="Silat.png">
+
+    <img src="Layangan.png">
+
+  </div>
+
+</div>
+
+    <!-- QUOTE -->
+
+    <div class="quote">
+
+      <p>
+        “Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya.”
+      </p>
+
+      <span>
+        HR. Ahmad
+      </span>
+
+    </div>
+    
+    <div class="big-cta">
+
+  <h1>
+    ✨ Terus Belajar Ibadah ✨
+  </h1>
+
+  <p>
+    Jadikan ilmu sebagai cahaya dalam kehidupan sehari-hari.
+  </p>
+
+  <a href="#">
+    🌙 Mulai Lagi
+  </a>
+
+</div>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <h2>
+        Panduan Wudhu
+      </h2>
+
+      <p>
+        Website pembelajaran islami modern dan interaktif.
+      </p>
+
+      <div class="footer-social">
+
+        <a href="#">📷</a>
+        <a href="#">🎵</a>
+        <a href="#">💬</a>
+        <a href="#">▶</a>
+
+      </div>
+
+    </footer>
+
+  </section>
+  
+<div class="bubble x1"></div>
+<div class="bubble x2"></div>
+<div class="bubble x3"></div>
+<div class="bubble x4"></div>
+
+</body>
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Beranda Panduan Wudhu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+/* FOOTER */
+
+footer{
+  width:100%;
+
+  background:#111;
+
+  color:white;
+
+  padding:50px 8% 25px;
+
+  margin-top:220px;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:30px;
+}
+
+/* LOGO */
+
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.footer-icon{
+  width:55px;
+  height:55px;
+
+  border-radius:15px;
+
+  background:#ffd369;
+  color:#222;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:24px;
+  font-weight:bold;
+}
+
+.footer-logo h3{
+  margin-bottom:5px;
+}
+
+.footer-logo p{
+  color:#bbb;
+  font-size:14px;
+}
+
+/* MENU */
+
+.footer-menu{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.footer-menu a{
+  color:#ddd;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.footer-menu a:hover{
+  color:#ffd369;
+}
+
+/* SOCIAL */
+
+.footer-social{
+  display:flex;
+  gap:15px;
+}
+
+.footer-social a{
+  width:50px;
+  height:50px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.08);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-decoration:none;
+
+  color:white;
+  font-size:22px;
+
+  transition:0.3s;
+}
+
+.footer-social a:hover{
+  background:#ffd369;
+  color:#222;
+
+  transform:translateY(-5px);
+}
+  
+  /* FEATURES */
+
+.hero-features{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+
+  margin-top:35px;
+  margin-bottom:35px;
+}
+
+.feature-box{
+  width:240px;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(10px);
+
+  color:white;
+
+  transition:0.3s;
+}
+
+.feature-box:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.14);
+}
+
+.feature-box h3{
+  margin-bottom:10px;
+  color:#ffd369;
+}
+
+.feature-box p{
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* QUOTE */
+
+.quote-box{
+  margin-top:30px;
+
+  color:white;
+
+  text-align:center;
+}
+
+.quote-box p{
+  font-size:18px;
+  font-style:italic;
+  margin-bottom:10px;
+}
+
+.quote-box span{
+  color:#ffd369;
+  font-size:14px;
+}
+
+/* SCROLL */
+
+.scroll-down{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.scroll-down span{
+  display:block;
+
+  width:28px;
+  height:48px;
+
+  border:2px solid white;
+  border-radius:30px;
+
+  position:relative;
+}
+
+.scroll-down span::before{
+  content:'';
+
+  position:absolute;
+
+  top:8px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:6px;
+  height:6px;
+
+  background:white;
+  border-radius:50%;
+
+  animation:scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim{
+
+  0%{
+    opacity:1;
+    top:8px;
+  }
+
+  100%{
+    opacity:0;
+    top:28px;
+  }
+
+}
+  
+  /* PROFILE */
+
+.hero-profile{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:35px;
+  flex-wrap:wrap;
+
+  margin-top:35px;
+  margin-bottom:35px;
+}
+
+.profile-card{
+  text-align:center;
+  color:white;
+}
+
+.profile-frame{
+  width:150px;
+  height:150px;
+
+  padding:5px;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(135deg,#ffd369,#ffffff,#ffd369);
+
+  margin:auto;
+  margin-bottom:15px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.profile-frame img{
+  width:100%;
+  height:100%;
+
+  border-radius:50%;
+  object-fit:cover;
+
+  border:4px solid rgba(255,255,255,0.2);
+}
+
+.profile-card h3{
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.profile-card p{
+  font-size:14px;
+  color:#ddd;
+}
+  
+  /* HERO MENU */
+
+.hero-menu{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+
+  margin-bottom:40px;
+}
+
+.hero-menu a{
+  text-decoration:none;
+
+  color:white;
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:1px;
+
+  padding:14px 22px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+}
+
+.hero-menu a:hover{
+  background:#ffd369;
+  color:#222;
+
+  transform:translateY(-4px);
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      overflow:hidden;
+    }
+
+/* NAVBAR */
+
+header{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:92%;
+  padding:15px 35px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  z-index:1000;
+}
+
+/* LOGO */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo-icon{
+  width:52px;
+  height:52px;
+
+  border-radius:15px;
+
+  background:#ffd369;
+  color:#222;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:24px;
+  font-weight:bold;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.logo-text h2{
+  color:white;
+  font-size:20px;
+  line-height:1;
+}
+
+.logo-text p{
+  color:#ddd;
+  font-size:12px;
+  margin-top:4px;
+}
+
+/* MENU */
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+
+  padding:12px 18px;
+  border-radius:12px;
+
+  transition:0.3s;
+  font-size:14px;
+}
+
+nav a:hover{
+  background:rgba(255,255,255,0.12);
+  color:#ffd369;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+}
+
+    /* HERO */
+
+    .hero{
+      width:100%;
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1400&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      max-width:900px;
+      color:white;
+      animation:fadeUp 1s ease;
+    }
+
+    .hero-content h1{
+      font-size:90px;
+      line-height:1.1;
+      margin-bottom:25px;
+      font-weight:700;
+    }
+
+    .hero-content h1 span{
+      color:#ffd369;
+    }
+
+    .hero-content p{
+      font-size:20px;
+      line-height:1.9;
+      margin-bottom:40px;
+      color:#f1f1f1;
+    }
+
+    /* BUTTON */
+
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 35px;
+      border:none;
+      border-radius:12px;
+      background:#ffd369;
+      color:#222;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:white;
+    }
+
+    .btn-outline{
+      padding:16px 35px;
+      border-radius:12px;
+      border:2px solid white;
+      background:transparent;
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-outline:hover{
+      background:white;
+      color:#222;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-content h1{
+        font-size:52px;
+      }
+
+      .hero-content p{
+        font-size:16px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+  <div class="logo">
+
+    <div class="logo-icon">☪</div>
+
+    <div class="logo-text">
+      <h2>Panduan Wudhu</h2>
+      <p>Islamic Learning</p>
+    </div>
+
+  </div>
+
+  <nav>
+
+    <a href="index.html">Home</a>
+    <a href="anggota.html">Anggota</a>
+    <a href="definisi.html">Definisi Wudhu</a>
+    <a href="video.html">Video Tutorial</a>
+     <a href="penutup.html">penutup</a>
+    <a href="pembatalan.html">pembatalan wudhu</a>
+
+  </nav>
+
+</header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <<h1>
+  PANDUAN <span>WUDHU</span>
+</h1>
+
+<p>
+  Belajar tata cara wudhu dengan benar sesuai tuntunan Islam
+  secara modern, interaktif, dan mudah dipahami.
+</p>
+
+<div class="hero-menu">
+
+  <a href="beranda.html">HOME</a>
+  <a href="anggota.html">ANGGOTA</a>
+  <a href="definisi.html">DEFINISI</a>
+  <a href="tatacara.html">TATA CARA</a>
+  <a href="video.html">VIDEO</a>
+   <a href="penutup.html">penutup</a>
+
+</div>
+
+<div class="buttons">
+
+  <button class="btn">
+    Mulai Belajar
+  </button>
+
+  <button class="btn-outline">
+    Video Tutorial
+  </button>
+
+</div>
+
+<div class="hero-profile">
+
+  <div class="profile-card">
+
+    <div class="profile-frame">
+      <img src="Sahidan.png">
+    </div>
+
+    <h3>Muhamad Sahidan Rifaldi</h3>
+    <p>Frontend Developer</p>
+
+  </div>
+
+  <div class="profile-card">
+
+    <div class="profile-frame">
+      <img src="Ragil.png">
+    </div>
+
+    <h3>Ragil Assadili</h3>
+    <p>UI Designer</p>
+
+  </div>
+  
+  <div class="hero-features">
+
+  <div class="feature-box">
+    <h3>📖 Materi Lengkap</h3>
+    <p>Belajar wudhu dari dasar hingga benar.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>🎥 Video Tutorial</h3>
+    <p>Tersedia video pembelajaran interaktif.</p>
+  </div>
+
+  <div class="feature-box">
+    <h3>✨ Modern Design</h3>
+    <p>Tampilan aesthetic dan responsive.</p>
+  </div>
+
+<div class="quote-box">
+
+  <p>
+    “Allah menyukai orang-orang yang mensucikan diri.”
+  </p>
+
+  <span>QS. At-Taubah : 108</span>
+
+</div>
+<div class="scroll-down">
+
+  <span></span>
+
+</div>
+<footer>
+
+  <div class="footer-content">
+
+    <div class="footer-logo">
+
+      <div class="footer-icon">☪</div>
+
+      <div>
+        <h3>Panduan Wudhu</h3>
+        <p>Belajar bersuci sesuai tuntunan Islam.</p>
+      </div>
+
+    </div>
+
+    <div class="footer-menu">
+
+      <a href="#beranda">Home</a>
+      <a href="#definisi">Materi</a>
+      <a href="#Tutorial">Tutorial</a>
+      <a href="#Video">Video</a>
+
+    </div>
+
+   <div class="footer-social">
+
+  <a href="#">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+  </a>
+
+  <a href="#">
+    <ion-icon name="logo-instagram"></ion-icon>
+  </a>
+
+  <a href="#">
+    <ion-icon name="logo-tiktok"></ion-icon>
+  </a>
+
+  <a href="#">
+    <ion-icon name="logo-youtube"></ion-icon>
+  </a>
+
+  <a href="#">
+    <ion-icon name="paper-plane"></ion-icon>
+  </a>
+
+</div>
+
+  <div class="footer-bottom">
+    © 2025 Panduan Wudhu | Islamic Learning Website
+  </div>
+
+</footer>
+  
+  </section>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

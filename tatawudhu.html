@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tata Cara Wudhu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+  /* FLOAT */
+
+.float-icon{
+  position:fixed;
+
+  color:rgba(255,255,255,0.06);
+
+  font-size:70px;
+
+  animation:floatAnim 6s ease-in-out infinite;
+
+  pointer-events:none;
+}
+
+.icon1{
+  top:20%;
+  left:4%;
+}
+
+.icon2{
+  bottom:15%;
+  right:6%;
+}
+
+.icon3{
+  top:60%;
+  left:12%;
+}
+
+@keyframes floatAnim{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-20px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
+  
+/* SUNNAH */
+
+.sunnah-box{
+  margin-top:80px;
+
+  text-align:center;
+}
+
+.sunnah-box h2{
+  margin-bottom:35px;
+
+  color:#ffd369;
+}
+
+.sunnah-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+  gap:25px;
+}
+
+.sunnah-item{
+  padding:25px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  color:white;
+
+  transition:0.3s;
+}
+
+.sunnah-item:hover{
+  transform:translateY(-8px);
+}
+  
+  /* DOA */
+
+.doa-card{
+  margin-top:80px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  border-radius:30px;
+
+  padding:45px;
+
+  text-align:center;
+}
+
+.doa-card h2{
+  color:#ffd369;
+
+  margin-bottom:30px;
+}
+
+.arabic{
+  font-size:36px;
+
+  line-height:2;
+
+  margin-bottom:30px;
+}
+  
+.step-container{
+  position:relative;
+}
+
+.step-container::before{
+  content:'';
+
+  position:absolute;
+
+  left:44px;
+  top:0;
+
+  width:4px;
+  height:100%;
+
+  background:
+  linear-gradient(#ffd369,#38bdf8);
+
+  border-radius:20px;
+}
+  
+  /* PROGRESS */
+
+.progress-wrap{
+  max-width:700px;
+  margin:auto;
+  margin-bottom:60px;
+}
+
+.progress-text{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:12px;
+
+  color:#ddd;
+}
+
+.progress-bar{
+  width:100%;
+  height:14px;
+
+  background:rgba(255,255,255,0.08);
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:100%;
+  height:100%;
+
+  background:
+  linear-gradient(90deg,#ffd369,#38bdf8);
+
+  border-radius:30px;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* BACKGROUND */
+
+    .glow1,
+    .glow2{
+      position:fixed;
+      width:350px;
+      height:350px;
+
+      filter:blur(170px);
+      opacity:0.12;
+
+      z-index:0;
+    }
+
+    .glow1{
+      background:#ffd369;
+      top:-100px;
+      left:-100px;
+    }
+
+    .glow2{
+      background:#38bdf8;
+      bottom:-100px;
+      right:-100px;
+    }
+
+    /* SECTION */
+
+    .section{
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      min-height:100vh;
+
+      padding:120px 8%;
+    }
+
+    /* TITLE */
+
+    .mini-title{
+      text-align:center;
+
+      color:#ffd369;
+
+      letter-spacing:4px;
+
+      font-size:14px;
+      font-weight:600;
+
+      margin-bottom:15px;
+    }
+
+    .title{
+      text-align:center;
+
+      font-size:58px;
+
+      line-height:1.2;
+
+      margin-bottom:20px;
+    }
+
+    .desc{
+      text-align:center;
+
+      max-width:760px;
+
+      margin:auto;
+
+      color:#cbd5e1;
+
+      line-height:1.9;
+
+      margin-bottom:70px;
+    }
+
+    /* NAVIGATION */
+
+    .page-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+
+      gap:18px;
+
+      margin-bottom:70px;
+    }
+
+    .page-btn{
+      padding:14px 24px;
+
+      border-radius:16px;
+
+      text-decoration:none;
+
+      color:white;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      transition:0.3s;
+    }
+
+    .page-btn:hover{
+      background:#ffd369;
+      color:#222;
+
+      transform:translateY(-5px);
+    }
+
+    .active-btn{
+      background:#ffd369;
+      color:#222;
+
+      font-weight:600;
+    }
+
+    /* STEP CONTAINER */
+
+    .step-container{
+      display:flex;
+      flex-direction:column;
+      gap:35px;
+    }
+
+    /* STEP CARD */
+
+    .step-card{
+      display:grid;
+      grid-template-columns:120px 1fr 320px;
+
+      gap:30px;
+
+      align-items:center;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      backdrop-filter:blur(12px);
+
+      border-radius:30px;
+
+      padding:30px;
+
+      transition:0.4s;
+    }
+
+    .step-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* NUMBER */
+
+    .step-number{
+      width:90px;
+      height:90px;
+
+      border-radius:25px;
+
+      background:#ffd369;
+
+      color:#222;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-size:34px;
+      font-weight:bold;
+
+      margin:auto;
+    }
+
+    /* TEXT */
+
+    .step-content h2{
+      color:#ffd369;
+
+      margin-bottom:15px;
+
+      font-size:28px;
+    }
+
+    .step-content p{
+      color:#cbd5e1;
+
+      line-height:1.9;
+    }
+
+    /* IMAGE */
+
+    .step-image{
+      width:100%;
+      height:220px;
+
+      border-radius:24px;
+
+      overflow:hidden;
+    }
+
+    .step-image img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      transition:0.4s;
+    }
+
+    .step-card:hover img{
+      transform:scale(1.08);
+    }
+
+    /* BENEFIT */
+
+    .tips-section{
+      margin-top:100px;
+    }
+
+    .tips-title{
+      text-align:center;
+
+      font-size:40px;
+
+      margin-bottom:50px;
+    }
+
+    .tips-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+      gap:25px;
+    }
+
+    .tips-card{
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      border-radius:26px;
+
+      padding:30px;
+
+      transition:0.3s;
+    }
+
+    .tips-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .tips-card span{
+      font-size:42px;
+
+      display:block;
+
+      margin-bottom:20px;
+    }
+
+    .tips-card h3{
+      color:#ffd369;
+
+      margin-bottom:15px;
+    }
+
+    .tips-card p{
+      color:#cbd5e1;
+
+      line-height:1.8;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      margin-top:100px;
+
+      text-align:center;
+    }
+
+    .quote p{
+      font-size:24px;
+
+      line-height:1.8;
+
+      font-style:italic;
+
+      margin-bottom:15px;
+    }
+
+    .quote span{
+      color:#ffd369;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:950px){
+
+      .step-card{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .title{
+        font-size:40px;
+      }
+
+      .step-content h2{
+        font-size:24px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- GLOW -->
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- SECTION -->
+
+  <section class="section">
+
+    <p class="mini-title">
+      PEMBELAJARAN WUDHU
+    </p>
+
+    <h1 class="title">
+      Tata Cara <br> Wudhu
+    </h1>
+
+    <p class="desc">
+      Berikut langkah-langkah tata cara wudhu yang benar
+      sesuai tuntunan Islam sebelum melaksanakan ibadah.
+    </p>
+    
+    <div class="progress-wrap">
+
+  <div class="progress-text">
+    <span>Pembelajaran Wudhu</span>
+    <span>100%</span>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+</div>
+
+    <!-- NAV -->
+
+    <div class="page-buttons">
+
+      <a href="beranda.html" class="page-btn">
+        🏠 Home
+      </a>
+
+      <a href="#" class="page-btn">
+        👥 Anggota
+      </a>
+
+      <a href="definisi.html" class="page-btn">
+        📖 Pengertian
+      </a>
+
+      <a href="tatawudhu.html" class="page-btn active-btn">
+        ✨ Tata Cara
+      </a>
+
+      <a href="#" class="page-btn">
+        🎥 Video
+      </a>
+
+    </div>
+
+    <!-- STEP -->
+
+<div class="step-container">
+    
+    
+
+  <!-- 1 -->
+
+  <div class="step-card">
+
+    <div class="step-number">1</div>
+
+    <div class="step-content">
+
+      <h2>🤲 Membaca Niat</h2>
+
+      <p>
+        Memulai wudhu dengan membaca niat di dalam hati
+        untuk menghilangkan hadas kecil karena Allah SWT.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Doa.png">
+    </div>
+
+  </div>
+
+  <!-- 2 -->
+
+  <div class="step-card">
+
+    <div class="step-number">2</div>
+
+    <div class="step-content">
+
+      <h2>🫧 Berkumur-kumur</h2>
+
+      <p>
+        Membersihkan mulut dengan berkumur sebanyak tiga kali
+        menggunakan air bersih.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Kumur.png">
+    </div>
+
+  </div>
+
+  <!-- 3 -->
+
+  <div class="step-card">
+
+    <div class="step-number">3</div>
+
+    <div class="step-content">
+
+      <h2>👃 Membersihkan Hidung</h2>
+
+      <p>
+        Memasukkan air ke dalam hidung lalu mengeluarkannya
+        untuk membersihkan hidung.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Hidung.png">
+    </div>
+
+  </div>
+
+  <!-- 4 -->
+
+  <div class="step-card">
+
+    <div class="step-number">4</div>
+
+    <div class="step-content">
+
+      <h2>💧 Membasuh Wajah</h2>
+
+      <p>
+        Membasuh seluruh wajah sebanyak tiga kali
+        secara merata menggunakan air.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Muka.png">
+    </div>
+
+  </div>
+
+  <!-- 5 -->
+
+  <div class="step-card">
+
+    <div class="step-number">5</div>
+
+    <div class="step-content">
+
+      <h2>✋ Membasuh Tangan Sampai Siku</h2>
+
+      <p>
+        Membasuh kedua tangan sampai siku dimulai dari tangan kanan
+        lalu kiri sebanyak tiga kali.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="siku.png">
+    </div>
+
+  </div>
+
+  <!-- 6 -->
+
+  <div class="step-card">
+
+    <div class="step-number">6</div>
+
+    <div class="step-content">
+
+      <h2>🕌 Mengusap Kepala</h2>
+
+      <p>
+        Mengusap sebagian kepala menggunakan tangan yang sudah dibasahi air.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Rambut.png">
+    </div>
+
+  </div>
+
+  <!-- 7 -->
+
+  <div class="step-card">
+
+    <div class="step-number">7</div>
+
+    <div class="step-content">
+
+      <h2>👂 Membersihkan Telinga</h2>
+
+      <p>
+        Membersihkan bagian dalam dan luar telinga menggunakan air.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Telinga.png">
+    </div>
+
+  </div>
+
+  <!-- 8 -->
+
+  <div class="step-card">
+
+    <div class="step-number">8</div>
+
+    <div class="step-content">
+
+      <h2>🦶 Membasuh Kaki</h2>
+
+      <p>
+        Membasuh kedua kaki hingga mata kaki dimulai dari kaki kanan
+        lalu kiri sebanyak tiga kali.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="kali.png">
+    </div>
+
+  </div>
+
+  <!-- 9 -->
+
+  <div class="step-card">
+
+    <div class="step-number">9</div>
+
+    <div class="step-content">
+
+      <h2>📿 Doa Sesudah Wudhu</h2>
+
+      <p>
+        Membaca doa setelah selesai berwudhu sebagai bentuk
+        penyempurna ibadah bersuci.
+      </p>
+
+    </div>
+
+    <div class="step-image">
+      <img src="Doa.png">
+    </div>
+
+  </div>
+
+</div>
+
+<div class="doa-card">
+
+  <h2>
+    📿 Doa Sesudah Wudhu
+  </h2>
+
+  <div class="arabic">
+    أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيْكَ لَهُ
+  </div>
+
+  <p>
+    “Aku bersaksi bahwa tidak ada Tuhan selain Allah
+    dan tidak ada sekutu bagi-Nya.”
+  </p>
+
+</div>
+
+<div class="sunnah-box">
+
+  <h2>
+    ✨ Sunnah Saat Wudhu
+  </h2>
+
+  <div class="sunnah-list">
+
+    <div class="sunnah-item">
+      ✅ Mendahulukan anggota kanan
+    </div>
+
+    <div class="sunnah-item">
+      ✅ Membaca basmalah
+    </div>
+
+    <div class="sunnah-item">
+      ✅ Menghemat penggunaan air
+    </div>
+
+    <div class="sunnah-item">
+      ✅ Mengulang basuhan tiga kali
+    </div>
+
+  </div>
+
+</div>
+
+    <!-- TIPS -->
+
+    <div class="tips-section">
+
+      <h2 class="tips-title">
+        ✨ Keutamaan Wudhu
+      </h2>
+
+      <div class="tips-container">
+
+        <div class="tips-card">
+
+          <span>🧼</span>
+
+          <h3>Membersihkan Diri</h3>
+
+          <p>
+            Wudhu membersihkan anggota tubuh sebelum melaksanakan ibadah.
+          </p>
+
+        </div>
+
+        <div class="tips-card">
+
+          <span>🕌</span>
+
+          <h3>Syarat Shalat</h3>
+
+          <p>
+            Menjadi syarat sah sebelum melaksanakan shalat.
+          </p>
+
+        </div>
+
+        <div class="tips-card">
+
+          <span>✨</span>
+
+          <h3>Menenangkan Hati</h3>
+
+          <p>
+            Membuat hati lebih tenang dan siap beribadah.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- QUOTE -->
+
+    <div class="quote">
+
+      <p>
+        “Kebersihan adalah sebagian dari iman.”
+      </p>
+
+      <span>
+        HR. Muslim
+      </span>
+
+    </div>
+
+  </section>
+<div class="float-icon icon1">☪</div>
+<div class="float-icon icon2">☾</div>
+<div class="float-icon icon3">✦</div>
+<div class="float-icon icon4">==</div>
+</body>
+</html>

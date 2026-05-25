@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Halaman Anggota</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+/* CONTACT */
+
+.contact-btn{
+  margin-top:20px;
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:16px;
+
+  background:#ffd369;
+
+  color:#222;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.contact-btn:hover{
+  transform:translateY(-5px);
+}
+  
+  /* TIMELINE */
+
+.timeline{
+  margin-top:90px;
+
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+.timeline-item{
+  display:flex;
+  gap:25px;
+
+  align-items:flex-start;
+
+  background:rgba(255,255,255,0.06);
+
+  padding:25px;
+
+  border-radius:22px;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.timeline-item span{
+  min-width:60px;
+  height:60px;
+
+  border-radius:18px;
+
+  background:#ffd369;
+
+  color:#222;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-weight:bold;
+  font-size:20px;
+}
+
+.timeline-item h3{
+  color:white;
+  margin-bottom:8px;
+}
+
+.timeline-item p{
+  color:#cbd5e1;
+  line-height:1.8;
+}
+  
+  /* MINI QUOTE */
+
+.mini-quote{
+  margin-bottom:20px;
+
+  padding:15px;
+
+  border-radius:15px;
+
+  background:rgba(255,255,255,0.05);
+
+  color:#ddd;
+
+  font-size:13px;
+  line-height:1.7;
+
+  font-style:italic;
+}
+  
+  /* ONLINE */
+
+.online-badge{
+  display:inline-block;
+
+  margin-bottom:18px;
+
+  padding:8px 16px;
+
+  border-radius:30px;
+
+  background:rgba(34,197,94,0.15);
+
+  color:#4ade80;
+
+  font-size:13px;
+
+  border:1px solid rgba(74,222,128,0.3);
+}
+  
+  
+  /* SEARCH */
+
+.search-box{
+  width:100%;
+  max-width:500px;
+
+  margin:auto;
+  margin-bottom:60px;
+
+  display:flex;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  backdrop-filter:blur(10px);
+}
+
+.search-box input{
+  flex:1;
+
+  padding:18px;
+
+  border:none;
+  outline:none;
+
+  background:transparent;
+
+  color:white;
+
+  font-size:15px;
+}
+
+.search-box input::placeholder{
+  color:#ccc;
+}
+
+.search-box button{
+  width:70px;
+
+  border:none;
+
+  background:#ffd369;
+
+  cursor:pointer;
+
+  font-size:20px;
+}
+  
+/* PAGE BUTTON */
+
+.page-buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:60px;
+}
+
+.page-btn{
+  padding:14px 24px;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  color:white;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+
+  font-size:14px;
+}
+
+.page-btn:hover{
+  background:#ffd369;
+  color:#222;
+
+  transform:translateY(-5px);
+}
+
+.active-btn{
+  background:#ffd369;
+  color:#222;
+
+  font-weight:600;
+}
+  
+/* STATS */
+
+.stats-container{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+
+  margin-bottom:70px;
+}
+
+.stat-box{
+  width:220px;
+
+  padding:25px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:blur(10px);
+
+  text-align:center;
+
+  transition:0.3s;
+}
+
+.stat-box:hover{
+  transform:translateY(-8px);
+}
+
+.stat-box h2{
+  color:#ffd369;
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.stat-box p{
+  color:#ddd;
+}
+
+/* SKILL */
+
+.skill{
+  margin-bottom:20px;
+}
+
+.skill-top{
+  display:flex;
+  justify-content:space-between;
+
+  color:#ddd;
+  font-size:13px;
+
+  margin-bottom:8px;
+}
+
+.skill-bar{
+  width:100%;
+  height:10px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.1);
+
+  overflow:hidden;
+}
+
+.skill-fill{
+  width:95%;
+  height:100%;
+
+  background:linear-gradient(90deg,#ffd369,#38bdf8);
+
+  border-radius:20px;
+}
+
+/* QUOTE */
+
+.quote-section{
+  margin-top:80px;
+
+  text-align:center;
+
+  color:white;
+}
+
+.quote-section p{
+  font-size:22px;
+  line-height:1.8;
+
+  margin-bottom:15px;
+
+  font-style:italic;
+}
+
+.quote-section span{
+  color:#ffd369;
+}
+
+/* FLOATING */
+
+.floating-icon{
+  position:fixed;
+
+  color:rgba(255,255,255,0.08);
+
+  font-size:70px;
+
+  pointer-events:none;
+
+  animation:floatAnim 6s ease-in-out infinite;
+}
+
+.icon1{
+  top:18%;
+  left:5%;
+}
+
+.icon2{
+  top:60%;
+  right:8%;
+}
+
+.icon3{
+  bottom:10%;
+  left:12%;
+}
+
+@keyframes floatAnim{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-20px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      overflow-x:hidden;
+    }
+
+    /* BACKGROUND */
+
+    .bg-glow{
+      position:absolute;
+      width:400px;
+      height:400px;
+
+      background:#ffd369;
+      filter:blur(180px);
+
+      opacity:0.15;
+
+      top:-100px;
+      left:-100px;
+    }
+
+    .bg-glow2{
+      position:absolute;
+      width:350px;
+      height:350px;
+
+      background:#38bdf8;
+      filter:blur(180px);
+
+      opacity:0.12;
+
+      bottom:-100px;
+      right:-100px;
+    }
+
+    /* SECTION */
+
+    .anggota-section{
+      width:100%;
+      min-height:100vh;
+
+      padding:120px 8%;
+
+      position:relative;
+      z-index:2;
+    }
+
+    /* TITLE */
+
+    .mini-title{
+      text-align:center;
+      color:#ffd369;
+
+      letter-spacing:4px;
+      font-size:14px;
+      font-weight:600;
+
+      margin-bottom:15px;
+    }
+
+    .title{
+      text-align:center;
+      color:white;
+
+      font-size:55px;
+      line-height:1.2;
+
+      margin-bottom:20px;
+    }
+
+    .desc{
+      text-align:center;
+      color:#cbd5e1;
+
+      max-width:700px;
+      margin:auto;
+
+      line-height:1.9;
+      margin-bottom:70px;
+    }
+
+    /* CARD */
+
+    .anggota-container{
+      display:flex;
+      justify-content:center;
+      gap:35px;
+      flex-wrap:wrap;
+    }
+
+    .anggota-card{
+      width:320px;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      backdrop-filter:blur(12px);
+
+      border-radius:30px;
+
+      padding:35px 30px;
+
+      text-align:center;
+
+      position:relative;
+
+      overflow:hidden;
+
+      transition:0.4s;
+    }
+
+    .anggota-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* PROFILE */
+
+    .profile-wrap{
+      width:170px;
+      height:170px;
+
+      margin:auto;
+      margin-bottom:25px;
+
+      border-radius:50%;
+
+      padding:6px;
+
+      background:
+      linear-gradient(135deg,#ffd369,#ffffff,#38bdf8);
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .profile-wrap img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      border-radius:50%;
+
+      border:5px solid #0f172a;
+    }
+
+    /* TEXT */
+
+    .anggota-card h2{
+      color:white;
+      margin-bottom:8px;
+      font-size:24px;
+    }
+
+    .role{
+      color:#ffd369;
+      font-size:14px;
+      margin-bottom:20px;
+      letter-spacing:1px;
+    }
+
+    .bio{
+      color:#cbd5e1;
+      font-size:14px;
+      line-height:1.8;
+
+      margin-bottom:25px;
+    }
+
+    /* SOCIAL */
+
+    .social{
+      display:flex;
+      justify-content:center;
+      gap:15px;
+    }
+
+    .social a{
+      width:45px;
+      height:45px;
+
+      border-radius:14px;
+
+      background:rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      color:white;
+      font-size:20px;
+
+      text-decoration:none;
+
+      transition:0.3s;
+    }
+
+    .social a:hover{
+      background:#ffd369;
+      color:#222;
+
+      transform:translateY(-5px);
+    }
+
+    /* BADGE */
+
+    .badge{
+      position:absolute;
+      top:20px;
+      right:-35px;
+
+      background:#ffd369;
+      color:#222;
+
+      padding:8px 40px;
+
+      transform:rotate(45deg);
+
+      font-size:12px;
+      font-weight:600;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .title{
+        font-size:38px;
+      }
+
+      .desc{
+        font-size:15px;
+      }
+
+    }
+
+  </style>
+</head>
+<div class="floating-icon icon1">☪</div>
+<div class="floating-icon icon2">✦</div>
+<div class="floating-icon icon3">☾</div>
+<body>
+
+  <!-- BACKGROUND -->
+
+  <div class="bg-glow"></div>
+  <div class="bg-glow2"></div>
+
+  <!-- SECTION -->
+
+  <section class="anggota-section">
+
+    <p class="mini-title">
+      TIM KELOMPOK
+    </p>
+
+    <h1 class="title">
+      Anggota <br> Kelompok
+    </h1>
+
+    <p class="desc">
+      Website ini dibuat untuk membantu pembelajaran tata cara
+      wudhu dengan tampilan modern, interaktif, dan mudah dipahami.
+    </p>
+    
+    <div class="page-buttons">
+
+  <a href="beranda.html" class="page-btn active-btn">
+    🏠 Home
+  </a>
+
+  <a href="definisi.html" class="page-btn">
+    📖 Pengertian
+  </a>
+
+  <a href="tatawudhu.html" class="page-btn">
+    ✨ Tata Cara
+  </a>
+
+  <a href="video.html" class="page-btn">
+    🎥 Video
+  </a>
+
+  <a href="pembatalan.html" class="page-btn">
+    ⚠ Pembatal
+  </a>
+
+</div>
+
+<div class="search-box">
+
+  <input type="text" placeholder="Cari anggota...">
+
+  <button>
+    🔍
+  </button>
+
+</div>
+    
+    <div class="stats-container">
+
+  <div class="stat-box">
+    <h2>2+</h2>
+    <p>Anggota Tim</p>
+  </div>
+
+  <div class="stat-box">
+    <h2>100%</h2>
+    <p>Responsive Design</p>
+  </div>
+
+  <div class="stat-box">
+    <h2>Modern</h2>
+    <p>Tugas modern</p>
+  </div>
+
+</div>
+
+    <!-- CARD -->
+
+    <div class="anggota-container">
+        
+        <div class="quote-section">
+
+  <p>
+    “Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya.”
+  </p>
+
+  <span>HR. Ahmad</span>
+
+</div>
+
+
+
+      <!-- CARD 1 -->
+
+      <div class="anggota-card">
+
+        <div class="badge">
+          Leader
+        </div>
+
+        <div class="profile-wrap">
+          <img src="Sahidan.png">
+        </div>
+
+        <h2>Muhamad Sahidan Rifaldi</h2>
+        
+<div class="online-badge">
+  ● Online
+</div>
+
+        <p class="role">
+          Pai Reguler
+        </p>
+
+        <p class="bio">
+          Mendesain tampilan website modern dan membuat
+          tampilan responsive untuk semua perangkat.dan membuat poster
+        </p>
+<div class="mini-quote">
+  "Kerja sama membuat project menjadi lebih baik."
+</div>
+        <div class="skill">
+
+  <div class="skill-top">
+    <span>HTML CSS & Canva</span>
+    <span>95%</span>
+  </div>
+
+  <div class="skill-bar">
+    <div class="skill-fill"></div>
+  </div>
+
+</div>
+
+        <div class="social">
+
+          <a href="https://www.instagram.com/sahidan_saja?igsh=cHVpN3N5am42NXJz">
+            📷
+          </a>
+
+          <a href="#">
+            💬
+          </a>
+
+          <a href="#">
+            ▶
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="anggota-card">
+          
+         <div class="badge">
+          Leader
+        </div>
+
+        <div class="profile-wrap">
+          <img src="Ragil.png">
+        </div>
+
+        <h2>Ragil Abdurrahman</h2>
+        
+        <div class="online-badge">
+  ● Online
+</div>
+
+        <p class="role">
+          PAI Reguler
+        </p>
+
+        <p class="bio">
+          membuat laporan yang dikirimkan oleh pa dosen
+        </p>
+        
+<div class="mini-quote">
+  "Kerja sama membuat project menjadi lebih baik."
+</div>
+
+        <div class="skill">
+
+  <div class="skill-top">
+    <span>Laporan & Word</span>
+    <span>95%</span>
+  </div>
+
+  <div class="skill-bar">
+    <div class="skill-fill"></div>
+  </div>
+
+</div>
+
+        <div class="social">
+
+          <a href="https://www.instagram.com/ra11ytez?igsh=MTM0bWt5OGExOHI2eQ==">
+            📷
+          </a>
+
+          <a href="#">
+            💬
+          </a>
+
+          <a href="#">
+            ▶
+          </a>
+
+        </div>
+
+      </div>
+      
+      <button class="contact-btn">
+  Hubungi
+</button>
+      
+      <div class="timeline">
+
+  <div class="timeline-item">
+    <span>01</span>
+    <div>
+      <h3>Perencanaan</h3>
+      <p>Membuat konsep website panduan wudhu.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <span>02</span>
+    <div>
+      <h3>Desain</h3>
+      <p>Mendesain tampilan modern dan responsive. dan laporan</p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <span>03</span>
+    <div>
+      <h3>Development</h3>
+      <p>Membangun website menggunakan CANVA HTML & CSS.</p>
+    </div>
+  </div>
+
+</div>

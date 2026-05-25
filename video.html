@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Video Tutorial Wudhu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+  /* LOADER */
+
+#loader{
+  position:fixed;
+  inset:0;
+
+  background:#0f172a;
+
+  z-index:99999;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  gap:20px;
+}
+
+.spinner{
+  width:80px;
+  height:80px;
+
+  border:6px solid rgba(255,255,255,0.1);
+
+  border-top:6px solid #ff4d4d;
+
+  border-radius:50%;
+
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+  
+  /* FOOTER */
+
+.footer{
+  margin-top:120px;
+
+  padding:70px 20px;
+
+  text-align:center;
+
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.footer h2{
+  color:#ff4d4d;
+
+  margin-bottom:15px;
+}
+
+.footer p{
+  color:#cbd5e1;
+
+  margin-bottom:30px;
+}
+
+.footer-social{
+  display:flex;
+  justify-content:center;
+
+  gap:20px;
+}
+
+.footer-social a{
+  width:55px;
+  height:55px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-decoration:none;
+
+  color:white;
+
+  font-size:24px;
+
+  transition:0.3s;
+}
+
+.footer-social a:hover{
+  background:#ff4d4d;
+
+  transform:translateY(-6px);
+}
+  
+  /* COMMENT */
+
+.comment-section{
+  margin-bottom:100px;
+}
+
+.comment-section h2{
+  text-align:center;
+
+  margin-bottom:50px;
+
+  font-size:42px;
+}
+
+.comment-box{
+  margin-bottom:25px;
+
+  padding:30px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.comment-box h3{
+  color:#ff4d4d;
+
+  margin-bottom:12px;
+}
+
+.comment-box p{
+  color:#cbd5e1;
+
+  line-height:1.8;
+}
+  
+  /* FEATURE */
+
+.feature-section{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+  gap:30px;
+
+  margin-bottom:100px;
+}
+
+.feature-card{
+  padding:35px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  text-align:center;
+
+  transition:0.3s;
+}
+
+.feature-card:hover{
+  transform:translateY(-10px);
+}
+
+.feature-card span{
+  font-size:50px;
+
+  display:block;
+
+  margin-bottom:20px;
+}
+
+.feature-card h3{
+  color:#ff4d4d;
+
+  margin-bottom:15px;
+
+  font-size:26px;
+}
+
+.feature-card p{
+  color:#cbd5e1;
+
+  line-height:1.8;
+}
+  
+/* LIVE */
+
+.live-box{
+  width:fit-content;
+
+  margin:auto;
+  margin-bottom:80px;
+
+  padding:18px 30px;
+
+  border-radius:50px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.live-dot{
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  background:#ff4d4d;
+
+  animation:liveAnim 1s infinite;
+}
+
+@keyframes liveAnim{
+
+  0%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:0.3;
+  }
+
+  100%{
+    opacity:1;
+  }
+
+}
+  
+  /* PLAYLIST */
+
+.playlist-section{
+  margin-bottom:90px;
+}
+
+.playlist-section h2{
+  text-align:center;
+
+  margin-bottom:40px;
+
+  font-size:40px;
+}
+
+.playlist-container{
+  display:flex;
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:20px;
+}
+
+.playlist-item{
+  padding:18px 28px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.playlist-item:hover{
+  transform:translateY(-6px);
+
+  background:#ff4d4d;
+}
+
+.active-playlist{
+  background:#ff4d4d;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* BACKGROUND */
+
+    .glow1,
+    .glow2{
+      position:fixed;
+
+      width:350px;
+      height:350px;
+
+      filter:blur(180px);
+
+      opacity:0.12;
+
+      z-index:0;
+    }
+
+    .glow1{
+      background:#ff0000;
+
+      top:-100px;
+      left:-100px;
+    }
+
+    .glow2{
+      background:#38bdf8;
+
+      bottom:-100px;
+      right:-100px;
+    }
+
+    /* FLOAT ICON */
+
+    .float-icon{
+      position:fixed;
+
+      color:rgba(255,255,255,0.05);
+
+      font-size:70px;
+
+      animation:floatAnim 6s ease-in-out infinite;
+
+      pointer-events:none;
+    }
+
+    .icon1{
+      top:20%;
+      left:4%;
+    }
+
+    .icon2{
+      bottom:15%;
+      right:6%;
+    }
+
+    .icon3{
+      top:60%;
+      left:12%;
+    }
+
+    @keyframes floatAnim{
+
+      0%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-20px);
+      }
+
+      100%{
+        transform:translateY(0);
+      }
+
+    }
+
+    /* SECTION */
+
+    .section{
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      min-height:100vh;
+
+      padding:120px 8%;
+    }
+
+    /* TITLE */
+
+    .mini-title{
+      text-align:center;
+
+      color:#ff4d4d;
+
+      letter-spacing:4px;
+
+      font-size:14px;
+      font-weight:600;
+
+      margin-bottom:15px;
+    }
+
+    .title{
+      text-align:center;
+
+      font-size:58px;
+
+      line-height:1.2;
+
+      margin-bottom:20px;
+    }
+
+    .desc{
+      text-align:center;
+
+      max-width:760px;
+
+      margin:auto;
+
+      color:#cbd5e1;
+
+      line-height:1.9;
+
+      margin-bottom:60px;
+    }
+
+    /* NAVIGATION */
+
+    .page-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+
+      gap:18px;
+
+      margin-bottom:70px;
+    }
+
+    .page-btn{
+      padding:14px 24px;
+
+      border-radius:16px;
+
+      text-decoration:none;
+
+      color:white;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      transition:0.3s;
+    }
+
+    .page-btn:hover{
+      background:#ff4d4d;
+
+      transform:translateY(-5px);
+    }
+
+    .active-btn{
+      background:#ff4d4d;
+      font-weight:600;
+    }
+
+    /* HERO VIDEO */
+
+    .hero-video{
+      position:relative;
+
+      width:100%;
+      height:550px;
+
+      border-radius:35px;
+
+      overflow:hidden;
+
+      margin-bottom:90px;
+
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-video img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+
+      background:
+      linear-gradient(
+      to top,
+      rgba(15,23,42,0.95),
+      rgba(15,23,42,0.2)
+      );
+
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+
+      padding:50px;
+    }
+
+    .overlay h2{
+      font-size:42px;
+
+      margin-bottom:20px;
+    }
+
+    .overlay p{
+      max-width:650px;
+
+      color:#ddd;
+
+      line-height:1.9;
+
+      margin-bottom:30px;
+    }
+
+    .play-btn{
+      width:80px;
+      height:80px;
+
+      border-radius:50%;
+
+      border:none;
+
+      background:#ff4d4d;
+
+      color:white;
+
+      font-size:30px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .play-btn:hover{
+      transform:scale(1.1);
+    }
+
+    /* VIDEO GRID */
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+      gap:30px;
+
+      margin-bottom:100px;
+    }
+
+    .video-card{
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      border-radius:28px;
+
+      overflow:hidden;
+
+      transition:0.4s;
+    }
+
+    .video-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .video-card img{
+      width:100%;
+      height:220px;
+
+      object-fit:cover;
+
+      transition:0.4s;
+    }
+
+    .video-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .video-content{
+      padding:28px;
+    }
+
+    .video-content h3{
+      color:#ff4d4d;
+
+      margin-bottom:15px;
+
+      font-size:24px;
+    }
+
+    .video-content p{
+      color:#cbd5e1;
+
+      line-height:1.8;
+
+      margin-bottom:25px;
+    }
+
+    .watch-btn{
+      display:inline-block;
+
+      padding:12px 22px;
+
+      border-radius:14px;
+
+      background:#ff4d4d;
+
+      color:white;
+
+      text-decoration:none;
+
+      transition:0.3s;
+    }
+
+    .watch-btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* STATS */
+
+    .stats-container{
+      display:flex;
+      justify-content:center;
+
+      gap:25px;
+
+      flex-wrap:wrap;
+
+      margin-bottom:90px;
+    }
+
+    .stat-card{
+      width:240px;
+
+      padding:30px;
+
+      border-radius:26px;
+
+      text-align:center;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-card h2{
+      color:#ff4d4d;
+
+      font-size:42px;
+
+      margin-bottom:10px;
+    }
+
+    .stat-card p{
+      color:#ddd;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      text-align:center;
+
+      margin-top:50px;
+    }
+
+    .quote p{
+      font-size:24px;
+
+      line-height:1.8;
+
+      font-style:italic;
+
+      margin-bottom:15px;
+    }
+
+    .quote span{
+      color:#ff4d4d;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .title{
+        font-size:40px;
+      }
+
+      .hero-video{
+        height:420px;
+      }
+
+      .overlay h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+    
+    <div id="loader">
+
+  <div class="spinner"></div>
+
+  <h2>Panduan Wudhu</h2>
+
+</div>
+
+  <!-- GLOW -->
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- FLOAT -->
+
+  <div class="float-icon icon1">▶</div>
+  <div class="float-icon icon2">☪</div>
+  <div class="float-icon icon3">✦</div>
+
+  <!-- SECTION -->
+
+  <section class="section">
+
+    <p class="mini-title">
+      VIDEO PEMBELAJARAN
+    </p>
+
+    <h1 class="title">
+      Video Tutorial <br> Wudhu
+    </h1>
+
+    <p class="desc">
+      Pelajari tata cara wudhu melalui video pembelajaran
+      interaktif agar lebih mudah dipahami.
+    </p>
+
+    <!-- NAV -->
+
+    <div class="page-buttons">
+
+      <a href="beranda.html" class="page-btn">
+        🏠 Home
+      </a>
+
+      <a href="anggota.html" class="page-btn">
+        👥 Anggota
+      </a>
+
+      <a href="definisi.html" class="page-btn">
+        📖 Pengertian
+      </a>
+
+      <a href="tatawudhu.html" class="page-btn">
+        ✨ Tata Cara
+      </a>
+
+      <a href="pembatalan.html" class="page-btn">
+        ⚠ Pembatal
+      </a>
+
+      <a href="video.html" class="page-btn active-btn">
+        🎥 Video
+      </a>
+
+    </div>
+
+    <!-- HERO VIDEO -->
+
+    <div class="hero-video">
+
+      <img src="Amba.png">
+
+      <div class="overlay">
+
+        <h2>
+          Tutorial Wudhu Modern
+        </h2>
+
+        <p>
+          Video pembelajaran wudhu lengkap mulai dari niat,
+          tata cara, hingga doa sesudah wudhu.
+        </p>
+<a href="https://youtu.be/_WzJBOVBYBc?si=8HremUVgxX179vDO" target="_blank" style="text-decoration: none;">
+        <button class="play-btn">
+          ▶  
+        </button>
+     <a/>
+      </div>
+
+    </div>
+    
+    <div class="playlist-section">
+
+  <h2>
+    🎬 Playlist Pembelajaran
+  </h2>
+
+  <div class="playlist-container">
+
+    <div class="playlist-item active-playlist">
+      ▶ Pengertian Wudhu
+   </div>
+   
+    <div class="playlist-item">
+      💧 Tata Cara Wudhu
+    </div>
+
+    <div class="playlist-item">
+      📿 Doa Sesudah Wudhu
+    </div>
+
+    <div class="playlist-item">
+      ⚠ Pembatal Wudhu
+    </div>
+
+    <div class="playlist-item">
+      ✨ Sunnah Wudhu
+    </div>
+
+  </div>
+
+</div>
+
+    <!-- STATS -->
+
+    <div class="stats-container">
+
+      <div class="stat-card">
+
+        <h2>4+</h2>
+
+        <p>Video Islami</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h2>HD</h2>
+
+        <p>Kualitas Premium</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <h2>100%</h2>
+
+        <p>Pembelajaran Modern</p>
+
+      </div>
+
+    </div>
+    
+    <div class="live-box">
+
+  <div class="live-dot"></div>
+
+  <span>
+    120+ Orang Sedang Menonton Pembelajaran Wudhu
+  </span>
+
+</div>
+
+    <!-- VIDEO GRID -->
+
+    <div class="video-grid">
+
+      <!-- VIDEO 1 -->
+
+      <div class="video-card">
+
+        <img src="Keren.png">
+
+        <div class="video-content">
+
+          <h3>
+            📿 Niat Wudhu
+          </h3>
+
+          <p>
+            Belajar membaca niat wudhu sebelum memulai bersuci.
+          </p>
+
+          <a href="https://youtu.be/IERa12dCH4U?si=1lfSE3DVN39lLCqE" class="watch-btn">
+            ▶ Tonton
+          </a>
+
+        </div>
+
+      </div>
+      
+      <div class="feature-section">
+
+  <div class="feature-card">
+
+    <span>🎥</span>
+
+    <h3>Video HD</h3>
+
+    <p>
+      Pembelajaran kualitas tinggi dan nyaman ditonton.
+    </p>
+
+  </div>
+
+  <div class="feature-card">
+
+    <span>📱</span>
+
+    <h3>Responsive</h3>
+
+    <p>
+      Tampilan tetap bagus di HP maupun laptop.
+    </p>
+
+  </div>
+
+  <div class="feature-card">
+
+    <span>☪</span>
+
+    <h3>Pembelajaran Islami</h3>
+
+    <p>
+      Materi dibuat untuk membantu memahami wudhu dengan baik.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="comment-section">
+
+  <h2>
+    💬 Komentar Pembelajaran
+  </h2>
+
+  <div class="comment-box">
+
+    <h3>
+      Ahmad Ramadhan
+    </h3>
+
+    <p>
+      “Videonya sangat membantu memahami tata cara wudhu.”
+    </p>
+
+  </div>
+
+  <div class="comment-box">
+
+    <h3>
+      Nur Aisyah
+    </h3>
+
+    <p>
+      “Design website nya keren dan mudah dipahami.”
+    </p>
+
+  </div>
+
+</div>
+
+      <!-- VIDEO 2 -->
+
+      <div class="video-card">
+
+        <img src="Tunjuk.png">
+
+        <div class="video-content">
+
+          <h3>
+            💧 Tata Cara Wudhu
+          </h3>
+
+          <p>
+            Langkah-langkah wudhu lengkap sesuai sunnah Rasulullah.
+          </p>
+
+          <a href="https://youtu.be/gsCV3lDo7XA?si=uxFp0TeB4Chfn9iJ" class="watch-btn">
+            ▶ Tonton
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- VIDEO 3 -->
+
+      <div class="video-card">
+
+        <img src="Bawah.png">
+
+        <div class="video-content">
+
+          <h3>
+            ✨ Doa Sesudah Wudhu
+          </h3>
+
+          <p>
+            Belajar doa setelah wudhu beserta artinya.
+          </p>
+
+          <a href=" https://youtu.be/TvQEbqXlQ6s?si=UgI2gVKV62Mx-AB_ " class="watch-btn">
+            ▶ Tonton
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- QUOTE -->
+
+    <div class="quote">
+
+      <p>
+        “Kebersihan adalah sebagian dari iman.”
+      </p>
+
+      <span>
+        HR. Muslim
+      </span>
+
+    </div>
+
+  </section>
+
+<footer class="footer">
+
+  <h2>
+    Panduan Wudhu
+  </h2>
+
+  <p>
+    Website pembelajaran wudhu modern dan interaktif.
+  </p>
+
+  <div class="footer-social">
+
+    <a href="#">📷</a>
+    <a href="#">🎵</a>
+    <a href="#">💬</a>
+    <a href="#">▶</a>
+
+  </div>
+
+</footer>
+
+<script>
+
+window.addEventListener("load",()=>{
+
+  setTimeout(()=>{
+
+    document.getElementById("loader").style.display="none";
+
+  },1500)
+
+})
+
+</script>
+
+</body>
+</html>

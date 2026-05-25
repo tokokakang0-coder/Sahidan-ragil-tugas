@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pembatal Wudhu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+  
+  /* CHECKLIST */
+
+.checklist{
+  margin-top:90px;
+
+  text-align:center;
+}
+
+.checklist h2{
+  margin-bottom:40px;
+
+  color:#ff6b6b;
+}
+
+.check-item{
+  margin-bottom:20px;
+
+  padding:25px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  font-size:18px;
+
+  transition:0.3s;
+}
+
+.check-item:hover{
+  transform:translateY(-6px);
+}
+  
+  /* FAQ */
+
+.faq-section{
+  margin-top:100px;
+}
+
+.faq-section h2{
+  text-align:center;
+
+  margin-bottom:50px;
+
+  font-size:42px;
+}
+
+.faq-box{
+  margin-bottom:25px;
+
+  padding:30px;
+
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.faq-box h3{
+  color:#ff6b6b;
+
+  margin-bottom:15px;
+}
+
+.faq-box p{
+  color:#cbd5e1;
+
+  line-height:1.8;
+}
+  
+  /* ALERT */
+
+.alert-box{
+  margin-bottom:80px;
+
+  padding:35px;
+
+  border-radius:28px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,107,107,0.12),
+    rgba(255,255,255,0.05)
+  );
+
+  border:1px solid rgba(255,107,107,0.2);
+
+  text-align:center;
+}
+
+.alert-box h3{
+  color:#ff6b6b;
+
+  font-size:32px;
+
+  margin-bottom:18px;
+}
+
+.alert-box p{
+  color:#ddd;
+
+  line-height:1.9;
+}
+  
+  /* PROGRESS */
+
+.progress-wrap{
+  max-width:700px;
+
+  margin:auto;
+  margin-bottom:60px;
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+
+  margin-bottom:12px;
+
+  color:#ddd;
+}
+
+.progress-bar{
+  width:100%;
+  height:14px;
+
+  background:rgba(255,255,255,0.08);
+
+  border-radius:30px;
+
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:100%;
+  height:100%;
+
+  background:
+  linear-gradient(90deg,#ff6b6b,#38bdf8);
+
+  border-radius:30px;
+}
+  
+  /* STATS */
+
+.stats-container{
+  display:flex;
+  justify-content:center;
+
+  gap:25px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:80px;
+}
+
+.stat-card{
+  width:240px;
+
+  padding:30px;
+
+  border-radius:26px;
+
+  text-align:center;
+
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  transition:0.3s;
+}
+
+.stat-card:hover{
+  transform:translateY(-10px);
+}
+
+.stat-card h2{
+  color:#ff6b6b;
+
+  font-size:40px;
+
+  margin-bottom:10px;
+}
+
+.stat-card p{
+  color:#ddd;
+}
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* BACKGROUND */
+
+    .glow1,
+    .glow2{
+      position:fixed;
+
+      width:350px;
+      height:350px;
+
+      filter:blur(180px);
+
+      opacity:0.12;
+
+      z-index:0;
+    }
+
+    .glow1{
+      background:#ff6b6b;
+
+      top:-100px;
+      left:-100px;
+    }
+
+    .glow2{
+      background:#38bdf8;
+
+      bottom:-100px;
+      right:-100px;
+    }
+
+    /* SECTION */
+
+    .section{
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      min-height:100vh;
+
+      padding:120px 8%;
+    }
+
+    /* TITLE */
+
+    .mini-title{
+      text-align:center;
+
+      color:#ff6b6b;
+
+      letter-spacing:4px;
+
+      font-size:14px;
+      font-weight:600;
+
+      margin-bottom:15px;
+    }
+
+    .title{
+      text-align:center;
+
+      font-size:58px;
+
+      line-height:1.2;
+
+      margin-bottom:20px;
+    }
+
+    .desc{
+      text-align:center;
+
+      max-width:760px;
+
+      margin:auto;
+
+      color:#cbd5e1;
+
+      line-height:1.9;
+
+      margin-bottom:60px;
+    }
+
+    /* NAVIGATION */
+
+    .page-buttons{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+
+      gap:18px;
+
+      margin-bottom:70px;
+    }
+
+    .page-btn{
+      padding:14px 24px;
+
+      border-radius:16px;
+
+      text-decoration:none;
+
+      color:white;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.12);
+
+      transition:0.3s;
+    }
+
+    .page-btn:hover{
+      background:#ff6b6b;
+      color:white;
+
+      transform:translateY(-5px);
+    }
+
+    .active-btn{
+      background:#ff6b6b;
+      color:white;
+
+      font-weight:600;
+    }
+
+    /* WARNING BOX */
+
+    .warning-box{
+      max-width:900px;
+
+      margin:auto;
+      margin-bottom:80px;
+
+      padding:35px;
+
+      border-radius:30px;
+
+      background:rgba(255,107,107,0.08);
+
+      border:1px solid rgba(255,107,107,0.2);
+
+      text-align:center;
+
+      backdrop-filter:blur(10px);
+    }
+
+    .warning-box h2{
+      color:#ff6b6b;
+
+      margin-bottom:20px;
+
+      font-size:34px;
+    }
+
+    .warning-box p{
+      color:#ddd;
+
+      line-height:1.9;
+    }
+
+    /* CARD */
+
+    .batal-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+      gap:30px;
+    }
+
+    .batal-card{
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      border-radius:30px;
+
+      overflow:hidden;
+
+      backdrop-filter:blur(12px);
+
+      transition:0.4s;
+    }
+
+    .batal-card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    /* IMAGE */
+
+    .batal-card img{
+      width:100%;
+      height:220px;
+
+      object-fit:cover;
+
+      transition:0.4s;
+    }
+
+    .batal-card:hover img{
+      transform:scale(1.08);
+    }
+
+    /* CONTENT */
+
+    .batal-content{
+      padding:30px;
+    }
+
+    .batal-content h3{
+      color:#ff6b6b;
+
+      margin-bottom:15px;
+
+      font-size:24px;
+    }
+
+    .batal-content p{
+      color:#cbd5e1;
+
+      line-height:1.9;
+    }
+
+    /* TIPS */
+
+    .tips-section{
+      margin-top:100px;
+    }
+
+    .tips-title{
+      text-align:center;
+
+      font-size:42px;
+
+      margin-bottom:50px;
+    }
+
+    .tips-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:25px;
+    }
+
+    .tips-card{
+      padding:30px;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,0.08);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      transition:0.3s;
+    }
+
+    .tips-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .tips-card span{
+      font-size:42px;
+
+      display:block;
+
+      margin-bottom:20px;
+    }
+
+    .tips-card h3{
+      color:#ff6b6b;
+
+      margin-bottom:15px;
+    }
+
+    .tips-card p{
+      color:#cbd5e1;
+
+      line-height:1.8;
+    }
+
+    /* QUOTE */
+
+    .quote{
+      margin-top:100px;
+
+      text-align:center;
+    }
+
+    .quote p{
+      font-size:24px;
+
+      line-height:1.8;
+
+      font-style:italic;
+
+      margin-bottom:15px;
+    }
+
+    .quote span{
+      color:#ff6b6b;
+    }
+
+    /* FLOAT */
+
+    .float-icon{
+      position:fixed;
+
+      color:rgba(255,255,255,0.05);
+
+      font-size:70px;
+
+      animation:floatAnim 6s ease-in-out infinite;
+
+      pointer-events:none;
+    }
+
+    .icon1{
+      top:20%;
+      left:4%;
+    }
+
+    .icon2{
+      bottom:15%;
+      right:6%;
+    }
+
+    .icon3{
+      top:60%;
+      left:12%;
+    }
+
+    @keyframes floatAnim{
+
+      0%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-20px);
+      }
+
+      100%{
+        transform:translateY(0);
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .title{
+        font-size:40px;
+      }
+
+      .warning-box h2{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- GLOW -->
+
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- FLOAT -->
+
+  <div class="float-icon icon1">☪</div>
+  <div class="float-icon icon2">☾</div>
+  <div class="float-icon icon3">✦</div>
+
+  <!-- SECTION -->
+
+  <section class="section">
+
+    <p class="mini-title">
+      PEMBELAJARAN WUDHU
+    </p>
+
+    <h1 class="title">
+      Hal-Hal Yang <br> Membatalkan Wudhu
+    </h1>
+
+    <p class="desc">
+      Berikut beberapa hal yang dapat membatalkan wudhu
+      sehingga seseorang perlu berwudhu kembali sebelum beribadah.
+    </p>
+    
+    <div class="progress-wrap">
+
+  <div class="progress-top">
+
+    <span>Materi Pembatal Wudhu</span>
+
+    <span>100%</span>
+
+  </div>
+
+  <div class="progress-bar">
+
+    <div class="progress-fill"></div>
+
+  </div>
+
+</div>
+
+    <!-- NAVIGATION -->
+
+    <div class="page-buttons">
+
+      <a href="beranda.html" class="page-btn">
+        🏠 Home
+      </a>
+
+      <a href="anggota.html" class="page-btn">
+        👥 Anggota
+      </a>
+
+      <a href="definisi.html" class="page-btn">
+        📖 Pengertian
+      </a>
+
+      <a href="tatawudhu.html" class="page-btn">
+        📷 Tata Cara
+      </a>
+      
+     <a href="video.html" class="page-btn">
+        🧌 video
+      </a>
+
+      <a href="pembatalan.html" class="page-btn active-btn">
+        ⚠ Pembatalan
+      </a>
+
+    </div>
+
+    <!-- WARNING -->
+
+    <div class="warning-box">
+
+      <h2>
+        ⚠ Penting Untuk Diketahui
+      </h2>
+
+      <p>
+        Menjaga wudhu sangat penting sebelum melaksanakan ibadah.
+        Jika wudhu batal maka diwajibkan untuk berwudhu kembali
+        agar ibadah tetap sah.
+      </p>
+
+    </div>
+    
+<div class="stats-container">
+
+  <div class="stat-card">
+
+    <h2>5+</h2>
+
+    <p>Pembatalan Wudhu</p>
+
+  </div>
+
+  <div class="stat-card">
+
+    <h2>100%</h2>
+
+    <p>Pembelajaran Islami</p>
+
+  </div>
+
+  <div class="stat-card">
+
+    <h2>Modern</h2>
+
+    <p>Interactive UI</p>
+
+  </div>
+
+</div>
+
+<div class="alert-box">
+
+  <h3>
+    🚨 Perhatian
+  </h3>
+
+  <p>
+    Jika wudhu batal maka wajib mengulang wudhu sebelum
+    melaksanakan ibadah seperti shalat.
+  </p>
+
+</div>
+
+    <!-- CARD -->
+
+    <div class="batal-container">
+
+      <!-- CARD 1 -->
+
+      <div class="batal-card">
+
+        <img src="Sare.png">
+
+        <div class="batal-content">
+
+          <h3>
+            😴 Tidur Nyenyak
+          </h3>
+
+          <p>
+            Tidur yang terlalu nyenyak dapat membatalkan wudhu
+            karena hilangnya kesadaran seseorang.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="batal-card">
+
+        <img src="Kebelet.png">
+
+        <div class="batal-content">
+
+          <h3>
+            🚻 Keluar Sesuatu Dari Qubul atau Dubur
+          </h3>
+
+          <p>
+            Segala sesuatu yang keluar dari qubul atau dubur
+            seperti buang air kecil dan besar membatalkan wudhu.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="batal-card">
+
+        <img src="Sadar.jpg">
+
+        <div class="batal-content">
+
+          <h3>
+            🤕 Hilang Akal
+          </h3>
+
+          <p>
+            Pingsan, mabuk, atau hilang kesadaran termasuk
+            hal yang membatalkan wudhu.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="batal-card">
+
+        <img src="Stop.png">
+
+        <div class="batal-content">
+
+          <h3>
+            ✋ Menyentuh Kemaluan
+          </h3>
+
+          <p>
+            Menyentuh kemaluan dengan telapak tangan secara langsung
+            dapat membatalkan wudhu.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 5 -->
+
+      <div class="batal-card">
+
+        <img src="Jatuh.png">
+
+        <div class="batal-content">
+
+          <h3>
+            🩸 Keluar Darah Banyak
+          </h3>
+
+          <p>
+            Sebagian ulama berpendapat darah yang keluar banyak
+            dapat membatalkan wudhu.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TIPS -->
+
+    <div class="tips-section">
+
+      <h2 class="tips-title">
+        ✨ Tips Menjaga Wudhu
+      </h2>
+
+      <div class="tips-container">
+
+        <div class="tips-card">
+
+          <span>💧</span>
+
+          <h3>Perbaharui Wudhu</h3>
+
+          <p>
+            Biasakan memperbaharui wudhu sebelum melaksanakan ibadah.
+          </p>
+
+        </div>
+
+        <div class="tips-card">
+
+          <span>🕌</span>
+
+          <h3>Menjaga Kesucian</h3>
+
+          <p>
+            Menjaga kebersihan tubuh dan pakaian setiap saat.
+          </p>
+
+        </div>
+
+        <div class="tips-card">
+
+          <span>📿</span>
+
+          <h3>Berdoa Setelah Wudhu</h3>
+
+          <p>
+            Membaca doa sesudah wudhu untuk menyempurnakan ibadah.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+    <div class="faq-section">
+
+  <h2>
+    ❓ Pertanyaan Umum
+  </h2>
+
+  <div class="faq-box">
+
+    <h3>
+      Apakah tidur membatalkan wudhu?
+    </h3>
+
+    <p>
+      Tidur nyenyak yang menyebabkan hilangnya kesadaran
+      dapat membatalkan wudhu.
+    </p>
+
+  </div>
+
+  <div class="faq-box">
+
+    <h3>
+      Apakah darah membatalkan wudhu?
+    </h3>
+
+    <p>
+      Sebagian ulama berpendapat darah banyak dapat
+      membatalkan wudhu.
+    </p>
+
+  </div>
+
+</div>
+
+<div class="checklist">
+
+  <h2>
+    ✅ Cara Menjaga Wudhu
+  </h2>
+
+  <div class="check-item">
+    ✔ Menjaga kebersihan diri
+  </div>
+
+  <div class="check-item">
+    ✔ Menghindari hal yang membatalkan wudhu
+  </div>
+
+  <div class="check-item">
+    ✔ Selalu memperbaharui wudhu
+  </div>
+
+</div>
+
+    <!-- QUOTE -->
+
+    <div class="quote">
+
+      <p>
+        “Allah menyukai orang-orang yang mensucikan diri.”
+      </p>
+
+      <span>
+        QS. At-Taubah : 108
+      </span>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
